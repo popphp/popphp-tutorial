@@ -1,4 +1,3 @@
-skeleton
-========
+Pop PHP Skkeleton Application
+=============================
 
-Pop Skeleton
