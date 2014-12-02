@@ -2,7 +2,24 @@
 
 namespace Skeleton\Controller;
 
-class IndexController
+use Pop\Controller\Controller;
+
+class IndexController extends Controller
 {
+
+    public function index()
+    {
+        echo 'Hello World!' . PHP_EOL;
+    }
+
+    public function foo()
+    {
+        echo 'Foo!' . PHP_EOL;
+    }
+
+    public function error()
+    {
+        echo 'Whoops!' . PHP_EOL;
+    }
 
 }
