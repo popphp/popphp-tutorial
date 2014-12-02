@@ -1,14 +1,13 @@
 {
     "name": "popphp/pop-skeleton",
-    "description": "Skeleton Application for Pop PHP Framework 2",
+    "description": "Skeleton Application for Pop PHP Framework",
     "keywords": [
         "skeleton",
         "application",
         "framework",
         "php framework",
         "pop",
-        "pop php",
-        "pop php 2"
+        "pop php"
     ],
     "homepage": "http://www.popphp.org/",
     "license": "New BSD",
@@ -21,6 +20,6 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "popphp/popphp2": "~2.0"
+        "popphp/popphp": "~2.0"
     }
 }
