@@ -3,10 +3,16 @@
 require_once __DIR__  . '/../vendor/autoload.php';
 
 $app = new Skeleton\Application();
-$app->attach('app.error', function($exception){
-    echo $exception->getMessage();
-});
-$app->router()->addRoute('index', 'Skeleton\Controller\IndexController');
+$app->router()->addRoutes([
+    '/' => [
+        'controller' => 'Skeleton\Controller\IndexController',
+        'action'     => 'index'
+    ],
+    '/foo' => [
+        'controller' => 'Skeleton\Controller\IndexController',
+        'action'     => 'foo'
+    ]
+]);
 $app->run();
 
 
