@@ -4,7 +4,7 @@ namespace Skeleton\Controller;
 
 use Pop\Controller\Controller;
 
-class IndexController extends Controller
+class WebController extends Controller
 {
 
     public function index()

@@ -2,9 +2,7 @@
 
 namespace Skeleton;
 
-use Pop\Application as App;
-
-class Application extends App
+class Application extends \Pop\Application
 {
 
 }

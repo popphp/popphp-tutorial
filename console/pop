@@ -1,6 +1,19 @@
 #!/usr/bin/php
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__  . '/../vendor/autoload.php';
 
-echo 123;
+$app = new Skeleton\Application();
+$app->router()->addRoutes([
+    'hello' => [
+        'controller' => 'Skeleton\Controller\ConsoleController',
+        'action'     => 'hello',
+        'default'    => true
+    ],
+    'foo' => [
+        'controller' => 'Skeleton\Controller\ConsoleController',
+        'action'     => 'foo'
+    ]
+]);
+
+$app->run();

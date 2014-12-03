@@ -17,4 +17,9 @@ class ConsoleController extends Controller
         echo 'Foo!' . PHP_EOL;
     }
 
+    public function error()
+    {
+        echo 'Whoops!' . PHP_EOL;
+    }
+
 }
