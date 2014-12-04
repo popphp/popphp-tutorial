@@ -12,9 +12,12 @@ class WebController extends Controller
         echo 'Hello World!' . PHP_EOL;
     }
 
-    public function foo()
+    public function hello($name, array $items = null)
     {
-        echo 'Foo!' . PHP_EOL;
+        echo 'Hello ' . ucfirst($name) . '!' . PHP_EOL;
+        if (null !== $items) {
+            print_r($items);
+        }
     }
 
     public function error()

@@ -9,9 +9,9 @@ $app->router()->addRoutes([
         'action'     => 'index',
         'default'    => true
     ],
-    '/foo' => [
+    '/hello/:name[/:items*]' => [
         'controller' => 'Skeleton\Controller\WebController',
-        'action'     => 'foo'
+        'action'     => 'hello'
     ]
 ]);
 
