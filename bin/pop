@@ -5,14 +5,14 @@ require_once __DIR__  . '/../vendor/autoload.php';
 
 $app = new Skeleton\Application();
 $app->router()->addRoutes([
-    'hello <name>' => [
+    'help' => [
         'controller' => 'Skeleton\Controller\ConsoleController',
-        'action'     => 'hello',
+        'action'     => 'help',
         'default'    => true
     ],
-    'foo' => [
+    'hello [<name>]' => [
         'controller' => 'Skeleton\Controller\ConsoleController',
-        'action'     => 'foo'
+        'action'     => 'hello'
     ]
 ]);
 

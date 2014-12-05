@@ -7,14 +7,14 @@ use Pop\Controller\Controller;
 class ConsoleController extends Controller
 {
 
-    public function hello($name)
+    public function help()
     {
-        echo 'Hello ' . ucfirst($name) . '!' . PHP_EOL;
+        echo 'Hello World!' . PHP_EOL;
     }
 
-    public function foo()
+    public function hello($name = null)
     {
-        echo 'Foo!' . PHP_EOL;
+        echo 'Hello' . ((null !== $name) ? ' ' . ucfirst($name) : null) . '!' . PHP_EOL;
     }
 
     public function error()
