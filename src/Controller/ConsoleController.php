@@ -7,9 +7,9 @@ use Pop\Controller\Controller;
 class ConsoleController extends Controller
 {
 
-    public function hello()
+    public function hello($name)
     {
-        echo 'Hello World!' . PHP_EOL;
+        echo 'Hello ' . ucfirst($name) . '!' . PHP_EOL;
     }
 
     public function foo()
