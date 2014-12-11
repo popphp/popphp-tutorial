@@ -20,9 +20,13 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "popphp/popphp": "2.*@dev"
+        "popphp/popphp": "2.*@dev",
+        "popphp/pop-console": "2.*@dev",
+        "popphp/pop-http": "2.*@dev",
+        "popphp/pop-view": "2.*@dev",
+        "popphp/pop-web":  "2.*@dev"
     },
     "autoload": {
-        "psr-4": {"Skeleton\\": "src/"}
+        "psr-4": {"Skeleton\\": "app/src/"}
     }
 }

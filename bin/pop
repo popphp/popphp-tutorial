@@ -10,10 +10,22 @@ $app->router()->addRoutes([
         'action'     => 'help',
         'default'    => true
     ],
-    'hello [<name>]' => [
+    'hello <name>' => [
         'controller' => 'Skeleton\Controller\ConsoleController',
         'action'     => 'hello'
     ]
 ]);
+
+$app->on('app.route.pre', function(){
+    echo PHP_EOL;
+    echo '  Pop Skeleton CLI' . PHP_EOL;
+    echo '  ----------------' . PHP_EOL . PHP_EOL;
+});
+
+$app->on('app.dispatch.post', function(){
+    echo PHP_EOL;
+    echo '  ----------------' . PHP_EOL;
+    echo '  Complete!' . PHP_EOL . PHP_EOL;
+});
 
 $app->run();

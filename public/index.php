@@ -9,9 +9,9 @@ $app->router()->addRoutes([
         'action'     => 'index',
         'default'    => true
     ],
-    '/hello/:name[/:items*]' => [
+    '/edit/:id' => [
         'controller' => 'Skeleton\Controller\WebController',
-        'action'     => 'hello'
+        'action'     => 'edit'
     ]
 ]);
 
