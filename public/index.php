@@ -2,17 +2,10 @@
 
 require_once __DIR__  . '/../vendor/autoload.php';
 
-$app = new Skeleton\Application();
-$app->router()->addRoutes([
-    '/' => [
-        'controller' => 'Skeleton\Controller\WebController',
-        'action'     => 'index',
-        'default'    => true
-    ],
-    '/edit/:id' => [
-        'controller' => 'Skeleton\Controller\WebController',
-        'action'     => 'edit'
-    ]
-]);
+// Create the app, loading the config file
+$app = new Skeleton\Application(
+    include __DIR__ . '/../app/config/application.web.php'
+);
 
+// Run the app
 $app->run();

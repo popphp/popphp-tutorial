@@ -3,18 +3,9 @@
 
 require_once __DIR__  . '/../vendor/autoload.php';
 
-$app = new Skeleton\Application();
-$app->router()->addRoutes([
-    'help' => [
-        'controller' => 'Skeleton\Controller\ConsoleController',
-        'action'     => 'help',
-        'default'    => true
-    ],
-    'hello <name>' => [
-        'controller' => 'Skeleton\Controller\ConsoleController',
-        'action'     => 'hello'
-    ]
-]);
+$app = new Skeleton\Application(
+    include __DIR__ . '/../app/config/application.console.php'
+);
 
 $app->on('app.route.pre', function(){
     echo PHP_EOL;
