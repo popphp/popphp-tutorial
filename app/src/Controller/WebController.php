@@ -2,11 +2,11 @@
 
 namespace Skeleton\Controller;
 
-use Pop\Controller\Controller;
+use Pop\Controller\AbstractController;
 use Pop\Http\Response;
 use Pop\View\View;
 
-class WebController extends Controller
+class WebController extends AbstractController
 {
 
     protected $response;

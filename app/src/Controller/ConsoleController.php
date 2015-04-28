@@ -2,11 +2,11 @@
 
 namespace Skeleton\Controller;
 
-use Pop\Controller\Controller;
+use Pop\Controller\AbstractController;
 use Pop\Console\Console;
 use Pop\Console\Input\Command;
 
-class ConsoleController extends Controller
+class ConsoleController extends AbstractController
 {
 
     protected $console;
