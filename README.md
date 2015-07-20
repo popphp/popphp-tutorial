@@ -43,3 +43,12 @@ $ ./bin/pop hello world
 ```
 
 You should see the help screen and a "hello" screen, respectively.
+
+NOTES
+-----
+
+* The web application has a view folder, `app/view`, that holds the view scripts for page display.
+* The web application is utilizing the `pop-http` component to leverage the HTTP request and
+response objects within the controller object.
+* The CLI application is utilizing the `pop-console` component to leverage it for parsing
+the CLI requests and returning the appropriate responses on the CLI.
