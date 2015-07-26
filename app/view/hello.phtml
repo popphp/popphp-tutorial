@@ -11,7 +11,10 @@
 
 <body>
     <h1><?=$title; ?></h1>
-    <p>You have chosen to edit user <?=$id; ?></p>
+    <p>Hello <?=ucfirst($name); ?></p>
+<?php if (null !== $color): ?>
+    <p>You favorite color is <strong style="color: <?=$color; ?>;"><?=$color; ?></strong>, isn't it?</p>
+<?php endif; ?>
 </body>
 
 </html>

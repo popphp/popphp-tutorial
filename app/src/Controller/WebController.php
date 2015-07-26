@@ -27,10 +27,21 @@ class WebController extends AbstractController
         $this->response->send();
     }
 
+    public function hello($name, $color = null)
+    {
+        $view = new View($this->viewPath . '/hello.phtml');
+        $view->title = 'Hello';
+        $view->name  = $name;
+        $view->color = $color;
+
+        $this->response->setBody($view->render());
+        $this->response->send();
+    }
+
     public function edit($id)
     {
         $view = new View($this->viewPath . '/edit.phtml');
-        $view->title = 'Edit ' . $id;
+        $view->title = 'Edit Users';
         $view->id    = $id;
 
         $this->response->setBody($view->render());

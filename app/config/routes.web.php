@@ -8,7 +8,11 @@ return [
         'action'     => 'index',
         'default'    => true
     ],
-    '/edit/:id' => [
+    '/hello/:name[/:color]' => [
+        'controller' => 'Skeleton\Controller\WebController',
+        'action'     => 'hello'
+    ],
+    '/edit/user/:id' => [
         'controller' => 'Skeleton\Controller\WebController',
         'action'     => 'edit'
     ]
