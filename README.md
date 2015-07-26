@@ -28,9 +28,10 @@ Running the built-in PHP web server with `php -S localhost:8000 -t public`,
 try these routes to test the web application:
 
     http://localhost:8000/
-    http://localhost:8000/edit/1001
+    http://localhost:8000/hello/world
+    http://localhost:8000/edit/user/1001
 
-You should see the home page and an "edit" page, respectively.
+You should see the home page, a "hello" page and an "edit" page, respectively.
 
 ### CLI
 
@@ -40,9 +41,10 @@ application like this:
 ```console
 $ ./bin/pop help
 $ ./bin/pop hello world
+$ ./bin/pop edit user --id=1001
 ```
 
-You should see the help screen and a "hello" screen, respectively.
+You should see the help screen, a "hello" screen and an "edit" screen, respectively.
 
 NOTES
 -----
@@ -51,4 +53,4 @@ NOTES
 * The web application is utilizing the `pop-http` component to leverage the HTTP request and
 response objects within the controller object.
 * The CLI application is utilizing the `pop-console` component to leverage it for parsing
-the CLI requests and returning the appropriate responses on the CLI.
+the CLI requests and returning the appropriate responses to the CLI.
