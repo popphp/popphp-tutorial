@@ -10,7 +10,13 @@ wire up some simple routes for a web-facing application and a CLI-based applicat
 INSTALL
 -------
 
-Clone the repository and install it:
+Create a new proiect with it:
+
+```console
+$ composer create-project popphp/popphp-framework project-folder
+```
+
+Or clone the repository and install it:
 
 ```console
 $ composer install
