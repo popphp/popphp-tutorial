@@ -13,7 +13,7 @@ INSTALL
 Create a new proiect with it:
 
 ```console
-$ composer create-project popphp/popphp-framework project-folder
+$ composer create-project popphp/popphp-skeleton project-folder
 ```
 
 Or clone the repository and install it:
