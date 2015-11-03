@@ -23,7 +23,12 @@ $ composer install
 ```
 
 Once installed, the web access point is at `public/index.php` and the main
-CLI access point is at `bin/pop`
+CLI access point is at `script/pop`
+
+#### PERMISSIONS
+
+You must change the permissions of the `app/data` and `script` folders and
+their contents to writable in order for the application to fully work.
 
 BASIC USAGE
 -----------
@@ -31,31 +36,31 @@ BASIC USAGE
 ### Web
 
 Running the built-in PHP web server with `php -S localhost:8000 -t public`,
-try these routes to test the web application:
+try accessing web application:
 
     http://localhost:8000/
-    http://localhost:8000/hello/world
-    http://localhost:8000/edit/user/1001
 
-You should see the home page, a "hello" page and an "edit" page, respectively.
+You should see the main home page with comment form at the bottom. You can submit
+a comment and see it be added to the list of comments on the page.
 
 ### CLI
 
-Setting the `bin/pop` script to be executable, you can test the CLI
+Setting the `script/pop` script to be executable, you can test the CLI
 application like this:
 
 ```console
-$ ./bin/pop help
-$ ./bin/pop hello world
-$ ./bin/pop edit user --id=1001
+$ ./script/pop help
+$ ./script/pop show
+$ ./script/pop delete
 ```
 
-You should see the help screen, a "hello" screen and an "edit" screen, respectively.
+The first command shows the help screen; the second command shows any comments that have
+been posted; the third command allows you to select a post to delete.
 
 NOTES
 -----
 
-* The web application has a view folder, `app/view`, that holds the view scripts for page display.
+* The web application has a view folder, `app/view`, that holds the view scripts for web page display.
 * The web application is utilizing the `pop-http` component to leverage the HTTP request and
 response objects within the controller object.
 * The CLI application is utilizing the `pop-console` component to leverage it for parsing
