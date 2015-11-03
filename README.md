@@ -10,7 +10,7 @@ wire up some simple routes for a web-facing application and a CLI-based applicat
 INSTALL
 -------
 
-Create a new proiect with it:
+Create a new project with it:
 
 ```console
 $ composer create-project popphp/popphp-tutorial project-folder
