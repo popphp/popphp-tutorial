@@ -25,7 +25,7 @@ $ composer install
 Once installed, the web access point is at `public/index.php` and the main
 CLI access point is at `script/pop`
 
-#### PERMISSIONS
+#### Permissions
 
 You must change the permissions of the `app/data` and `script` folders and
 their contents to writable in order for the application to fully work.
