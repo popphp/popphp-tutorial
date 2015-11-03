@@ -2,12 +2,12 @@
 
 return [
     '/' => [
-        'controller' => 'Skeleton\Controller\IndexController',
+        'controller' => 'Tutorial\Controller\IndexController',
         'action'     => 'index',
         'default'    => true
     ],
     '/post' => [
-        'controller' => 'Skeleton\Controller\IndexController',
+        'controller' => 'Tutorial\Controller\IndexController',
         'action'     => 'post'
     ]
 ];

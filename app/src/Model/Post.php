@@ -1,8 +1,8 @@
 <?php
 
-namespace Skeleton\Model;
+namespace Tutorial\Model;
 
-use Skeleton\Table;
+use Tutorial\Table;
 
 class Post
 {

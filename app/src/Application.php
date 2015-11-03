@@ -1,6 +1,6 @@
 <?php
 
-namespace Skeleton;
+namespace Tutorial;
 
 use Pop\Db\Record;
 
@@ -18,7 +18,7 @@ class Application extends \Pop\Application
         if ($this->router->isCli()) {
             $this->on('app.route.pre', function(){
                 echo PHP_EOL;
-                echo '    Pop Skeleton CLI' . PHP_EOL;
+                echo '    Pop Tutorial CLI' . PHP_EOL;
                 echo '    ----------------' . PHP_EOL . PHP_EOL;
             });
 

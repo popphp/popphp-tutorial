@@ -3,7 +3,7 @@
 
 require_once __DIR__  . '/../vendor/autoload.php';
 
-$app = new Skeleton\Application(
+$app = new Tutorial\Application(
     include __DIR__ . '/../app/config/application.console.php'
 );
 

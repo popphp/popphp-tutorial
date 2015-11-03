@@ -1,6 +1,6 @@
 <?php
 
-namespace Skeleton\Table;
+namespace Tutorial\Table;
 
 use Pop\Db\Record;
 

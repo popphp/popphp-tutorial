@@ -1,10 +1,10 @@
-Pop PHP Skeleton Application
+Pop PHP Tutorial Application
 ============================
 
 OVERVIEW
 --------
 
-This is a basic skeleton application for the Pop PHP Framework to demonstrate how to
+This is a basic tutorial application for the Pop PHP Framework to demonstrate how to
 wire up some simple routes for a web-facing application and a CLI-based application.
 
 INSTALL
@@ -13,7 +13,7 @@ INSTALL
 Create a new proiect with it:
 
 ```console
-$ composer create-project popphp/popphp-skeleton project-folder
+$ composer create-project popphp/popphp-tutorial project-folder
 ```
 
 Or clone the repository and install it:
@@ -61,8 +61,8 @@ been posted; the third command allows you to select a post to delete.
 NOTES
 -----
 
-* The skeleton application uses the `pop-db` component to store the comments in a small SQLite database.
-* The skeleton application uses the `pop-form` component to create, render and validate the comment form.
+* The tutorial application uses the `pop-db` component to store the comments in a small SQLite database.
+* The tutorial application uses the `pop-form` component to create, render and validate the comment form.
 * The web application has a view folder, `app/view`, that holds the view scripts for web page display.
 * The web application is utilizing the `pop-http` component to leverage the HTTP request and
 response objects within the controller object.

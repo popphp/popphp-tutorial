@@ -2,16 +2,16 @@
 
 return [
     'help' => [
-        'controller' => 'Skeleton\Controller\ConsoleController',
+        'controller' => 'Tutorial\Controller\ConsoleController',
         'action'     => 'help',
         'default'    => true
     ],
     'show' => [
-        'controller' => 'Skeleton\Controller\ConsoleController',
+        'controller' => 'Tutorial\Controller\ConsoleController',
         'action'     => 'show'
     ],
     'delete' => [
-        'controller' => 'Skeleton\Controller\ConsoleController',
+        'controller' => 'Tutorial\Controller\ConsoleController',
         'action'     => 'delete'
     ]
 ];

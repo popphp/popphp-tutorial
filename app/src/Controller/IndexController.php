@@ -1,13 +1,13 @@
 <?php
 
-namespace Skeleton\Controller;
+namespace Tutorial\Controller;
 
 use Pop\Controller\AbstractController;
 use Pop\Http\Request;
 use Pop\Http\Response;
 use Pop\View\View;
-use Skeleton\Form;
-use Skeleton\Model;
+use Tutorial\Form;
+use Tutorial\Model;
 
 class IndexController extends AbstractController
 {

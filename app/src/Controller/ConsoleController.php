@@ -1,11 +1,11 @@
 <?php
 
-namespace Skeleton\Controller;
+namespace Tutorial\Controller;
 
 use Pop\Controller\AbstractController;
 use Pop\Console\Console;
 use Pop\Console\Input\Command;
-use Skeleton\Model;
+use Tutorial\Model;
 
 class ConsoleController extends AbstractController
 {

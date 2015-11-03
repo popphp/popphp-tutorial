@@ -1,6 +1,6 @@
 <?php
 
-namespace Skeleton\Form;
+namespace Tutorial\Form;
 
 use Pop\Form\Form;
 

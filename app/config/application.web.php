@@ -8,7 +8,7 @@ return [
             'params' => [
                 'adapter' => 'Sqlite',
                 'options' => [
-                    'database' => __DIR__ . '/../data/.htpopskel.sqlite'
+                    'database' => __DIR__ . '/../data/.htpoptutorial.sqlite'
                 ]
             ]
         ]

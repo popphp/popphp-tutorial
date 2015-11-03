@@ -1,8 +1,8 @@
 {
-    "name": "popphp/popphp-skeleton",
-    "description": "Skeleton Application for Pop PHP Framework",
+    "name": "popphp/popphp-tutorial",
+    "description": "Tutorial Application for Pop PHP Framework",
     "keywords": [
-        "skeleton",
+        "tutorial",
         "application",
         "framework",
         "php framework",
@@ -29,6 +29,6 @@
         "popphp/pop-web":  "2.0.*"
     },
     "autoload": {
-        "psr-4": {"Skeleton\\": "app/src/"}
+        "psr-4": {"Tutorial\\": "app/src/"}
     }
 }

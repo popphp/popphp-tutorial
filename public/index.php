@@ -7,7 +7,7 @@ $basePath = str_replace([realpath($_SERVER['DOCUMENT_ROOT']), '\\'], ['', '/'], 
 define('BASE_PATH', (!empty($basePath) ? $basePath : ''));
 
 // Create the app, loading the config file
-$app = new Skeleton\Application(
+$app = new Tutorial\Application(
     include __DIR__ . '/../app/config/application.web.php'
 );
 
