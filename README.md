@@ -36,9 +36,10 @@ BASIC USAGE
 ### Web
 
 While running the built-in PHP web server with `php -S localhost:8000 -t public`,
-try accessing the web application:
+try accessing the web application at these routes:
 
     http://localhost:8000/
+    http://localhost:8000/post
 
 You should see the main home page with comment form at the bottom. You can submit
 a comment and see it added to the list of comments on the page.
