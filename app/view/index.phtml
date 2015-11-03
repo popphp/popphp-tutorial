@@ -1,17 +1,61 @@
 <!DOCTYPE html>
+<!-- Header //-->
 <html>
 
 <head>
 
-    <title><?=$title; ?></title>
+    <title>
+        <?=$title; ?> : Pop PHP Framework Skeleton Application
+    </title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic" />
+    <link rel="stylesheet" type="text/css" href="<?=BASE_PATH; ?>/css/styles.css" />
 
 </head>
 
 <body>
-    <h1><?=$title; ?></h1>
-    <p>Welcome to the Pop PHP Framework.</p>
+    <header>
+        <h1><a href="http://www.popphp.org/" target="_blank">Pop PHP Framework Skeleton Application</a></h1>
+    </header>
+<!-- Content //-->
+    <div id="content">
+        <h1><?=$title; ?></h1>
+        <p>
+            Thank you for your interest in the Pop PHP Framework. The Pop PHP Framework is a lightweight,
+            yet robust PHP framework that can be used for rapid application development. The framework
+            itself has a base set of core components as well as numerous other additional components to
+            facilitate many of the common features needed for a PHP application.
+        </p>
+        <p>
+            This skeleton application is designed to give some insight into the structure and layout of
+            a simple application layout.
+        </p>
+        <h3 class="underline">Comments</h3>
+<?php if (count($posts) > 0): ?>
+<?php foreach ($posts as $post): ?>
+        <div class="post">
+            <h5><?=date('M d, Y g:i A', strtotime($post->submitted)); ?></h5>
+            <h4><?=(!empty($post->name) ? $post->name : 'Anonymous'); ?></h4>
+            <p><?=$post->comment; ?></p>
+        </div>
+<?php endforeach; ?>
+<?php else: ?>
+        <p>There are currently no comments.</p>
+<?php endif; ?>
+<?php if (!$form): ?>
+        <p>Thank you. Your comment has been submitted.</p>
+<?php else: ?>
+        <h4>Please enter a comment below:</h4>
+<?=$form;?>
+<?php endif; ?>
+    </div>
+<!-- Footer //-->
+    <footer>
+        Pop PHP Framework on <a href="https://github.com/popphp/" target="_blank">Github</a>.
+    </footer>
 </body>
 
 </html>

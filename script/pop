@@ -1,0 +1,10 @@
+#!/usr/bin/php
+<?php
+
+require_once __DIR__  . '/../vendor/autoload.php';
+
+$app = new Skeleton\Application(
+    include __DIR__ . '/../app/config/application.console.php'
+);
+
+$app->run();

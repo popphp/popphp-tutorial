@@ -5,6 +5,7 @@ namespace Skeleton\Controller;
 use Pop\Controller\AbstractController;
 use Pop\Console\Console;
 use Pop\Console\Input\Command;
+use Skeleton\Model;
 
 class ConsoleController extends AbstractController
 {
@@ -14,53 +15,57 @@ class ConsoleController extends AbstractController
     public function __construct()
     {
         $this->console = new Console();
+        $this->console->setIndent('    ');
 
         $help = new Command('help');
-        $help->setHelp('This is the general help screen.');
+        $help->setHelp('This is the help screen.');
         $this->console->addCommand($help);
-
-        $hello = new Command('hello');
-        $this->console->addCommand($hello);
-
-        $edit = new Command('edit', Command::VALUE_REQUIRED);
-        $edit->setHelp('This is the help screen for the edit screen.');
-        $this->console->addCommand($edit);
     }
 
     public function help()
     {
-        $this->console->write($this->console->getCommand('help')->getHelp(), '    ');
+        $this->console->write($this->console->getCommand('help')->getHelp());
         $this->console->send();
     }
 
-    public function hello($name, $yell = null)
+    public function show()
     {
-        $text = (null !== $yell) ?
-            'HELLO ' . $this->console->colorize(strtoupper($name), Console::BOLD_CYAN) :
-            'Hello ' . $this->console->colorize($name, Console::BOLD_CYAN) . '!';
+        $posts = (new Model\Post())->getAll(['order' => 'id ASC']);
 
-        $this->console->write($text, '    ');
+        if (count($posts) > 0) {
+            foreach ($posts as $post) {
+                $this->console->write(
+                    $post->id . '. ' .
+                    (!empty($post->name) ? $post->name : 'Anonymous') .
+                    ' [' . date('M d, Y g:i A', strtotime($post->submitted)) . ']'
+                );
+            }
+        } else {
+            $this->console->write('There are currently no posts');
+        }
+
         $this->console->send();
     }
 
-    public function edit($item, $id)
+    public function delete()
     {
-        $text = 'You have selected to edit ' . $this->console->colorize($item, Console::BOLD_GREEN) .
-            ' ' . $this->console->colorize($id, Console::BOLD_MAGENTA);
+        $posts = (new Model\Post())->getAll(['order' => 'id ASC']);
 
-        $this->console->write($text, '    ');
-        $this->console->send();
-    }
-
-    public function editHelp()
-    {
-        $this->console->write($this->console->getCommand('edit')->getHelp(), '    ');
+        if (count($posts) > 0) {
+            foreach ($posts as $post) {
+                $this->console->write(
+                    $post->id . '. ' . (!empty($post->name) ? $post->name : 'Anonymous') . ' (' . date('M d, Y g:i A', strtotime($post->submitted)) . ')'
+                );
+            }
+        } else {
+            $this->console->write('There are currently no posts');
+        }
         $this->console->send();
     }
 
     public function error()
     {
-        $this->console->write($this->console->colorize('Sorry that was not valid.', Console::BOLD_RED), '    ');
+        $this->console->write($this->console->colorize('Sorry that command was not valid.', Console::BOLD_RED));
         $this->console->send();
     }
 
