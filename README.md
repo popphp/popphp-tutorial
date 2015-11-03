@@ -60,6 +60,8 @@ been posted; the third command allows you to select a post to delete.
 NOTES
 -----
 
+* The skeleton application uses the `pop-db` component to store the comments in a small SQLite database.
+* The skeleton application uses the `pop-form` component to create, render and validate the comment form.
 * The web application has a view folder, `app/view`, that holds the view scripts for web page display.
 * The web application is utilizing the `pop-http` component to leverage the HTTP request and
 response objects within the controller object.
