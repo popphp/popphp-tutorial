@@ -2,12 +2,18 @@
 
 namespace Skeleton;
 
+use Pop\Db\Record;
+
 class Application extends \Pop\Application
 {
 
     public function bootstrap($autoloader = null)
     {
         parent::bootstrap($autoloader);
+
+        $this->on('app.init', function($application){
+            Record::setDb($application->services['database']);
+        });
 
         if ($this->router->isCli()) {
             $this->on('app.route.pre', function(){

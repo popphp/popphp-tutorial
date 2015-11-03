@@ -33,7 +33,7 @@
             This skeleton application is designed to give some insight into the structure and layout of
             a simple application layout.
         </p>
-        <h3 class="underline">Comments</h3>
+        <h3 class="underline">Comments <a style="float: right;" href="<?=BASE_PATH; ?>/post">Post Comment</a></h3>
 <?php if (count($posts) > 0): ?>
 <?php foreach ($posts as $post): ?>
         <div class="post">
@@ -43,13 +43,7 @@
         </div>
 <?php endforeach; ?>
 <?php else: ?>
-        <p>There are currently no comments.</p>
-<?php endif; ?>
-<?php if (!$form): ?>
-        <p>Thank you. Your comment has been submitted.</p>
-<?php else: ?>
-        <h4>Please enter a comment below:</h4>
-<?=$form;?>
+        <p>There are currently no comments. <a href="<?=BASE_PATH; ?>/post">Post the first one</a>.</p>
 <?php endif; ?>
     </div>
 <!-- Footer //-->

@@ -1,5 +1,16 @@
 <?php
 
 return [
-    'routes' => include 'routes.console.php'
+    'routes'   => include 'routes.console.php',
+    'services' => [
+        'database' => [
+            'call'   => 'Pop\Db\Db::connect',
+            'params' => [
+                'adapter' => 'Sqlite',
+                'options' => [
+                    'database' => __DIR__ . '/../data/.htpopskel.sqlite'
+                ]
+            ]
+        ]
+    ]
 ];

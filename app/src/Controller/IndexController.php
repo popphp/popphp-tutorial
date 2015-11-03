@@ -29,23 +29,33 @@ class IndexController extends AbstractController
 
         $view = new View($this->viewPath . '/index.phtml');
         $view->title = 'Welcome';
+        $view->posts = $post->getAll();
+
+        $this->response->setBody($view->render());
+        $this->response->send();
+    }
+
+    public function post()
+    {
+        $view = new View($this->viewPath . '/post.phtml');
+        $view->title = 'Post Comment';
         $view->form  = new Form\Post();
 
         if ($this->request->isPost()) {
             $view->form->addFilter('strip_tags')
-                 ->addFilter('htmlentities', [ENT_QUOTES, 'UTF-8'])
-                 ->setFieldValues($this->request->getPost());
+                ->addFilter('htmlentities', [ENT_QUOTES, 'UTF-8'])
+                ->setFieldValues($this->request->getPost());
 
             if ($view->form->isValid()) {
                 $view->form->clearFilters()
                      ->addFilter('html_entity_decode', [ENT_QUOTES, 'UTF-8']);
 
+                $post = new Model\Post();
                 $post->save($view->form->getFields());
-                $view->form  = false;
+                Response::redirect(((BASE_PATH == '') ? '/' : BASE_PATH));
+                exit();
             }
         }
-
-        $view->posts = $post->getAll();
 
         $this->response->setBody($view->render());
         $this->response->send();
