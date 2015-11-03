@@ -9,5 +9,9 @@ return [
     'show' => [
         'controller' => 'Skeleton\Controller\ConsoleController',
         'action'     => 'show'
+    ],
+    'delete' => [
+        'controller' => 'Skeleton\Controller\ConsoleController',
+        'action'     => 'delete'
     ]
 ];
