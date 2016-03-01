@@ -84,6 +84,52 @@ fieldset {
     border: none;
 }
 
+input[type=text] {
+    margin: 0;
+    padding: 8px 6px 8px 6px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.0em;
+    border: solid 1px #999;
+    background-color: #ddd;
+}
+
+textarea {
+    margin: 0 0 10px 0;
+    padding: 3px;
+    background-color: #ddd;
+    border: solid 1px #999;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.0em;
+}
+
+input[type=text]:focus, textarea:focus {
+    border: solid 1px #52b2e5;
+    background-color: #fff;
+}
+
+input[type=submit] {
+    margin: 0;
+    padding: 8px 12px 8px 12px;
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    font-size: 0.9em;
+    background-color: #4aa1ce;
+    border: none;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+    background-color: #30b6f9;
+}
+
+input[type=submit]:focus, button:focus {
+    outline: none;
+}
+
 header {
     margin: 2% auto 2% auto;
     padding: 0;
@@ -141,9 +187,9 @@ footer {
 }
 
 .post {
-    margin: 5px auto 5px auto;
-    padding: 5px 0 5px 0;
-    border-bottom: solid 1px #ccc;
+    margin: 15px auto 15px auto;
+    padding: 15px;
+    background-color: #ededed;
 }
 
 .post > h5 {
@@ -155,4 +201,14 @@ footer {
 .post > h4 {
     margin: 0;
     padding: 0;
+}
+
+.required {
+    font-weight: bold;
+    color: #4aa1ce;
+}
+
+.error {
+    font-weight: bold;
+    color: #f00;
 }

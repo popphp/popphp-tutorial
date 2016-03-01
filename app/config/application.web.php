@@ -1,7 +1,17 @@
 <?php
 
 return [
-    'routes'   => include 'routes.web.php',
+    'routes'   => [
+        '/' => [
+            'controller' => 'Tutorial\Controller\IndexController',
+            'action'     => 'index',
+            'default'    => true
+        ],
+        '/post' => [
+            'controller' => 'Tutorial\Controller\IndexController',
+            'action'     => 'post'
+        ]
+    ],
     'services' => [
         'database' => [
             'call'   => 'Pop\Db\Db::connect',

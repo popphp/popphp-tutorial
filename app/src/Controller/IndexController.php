@@ -43,8 +43,8 @@ class IndexController extends AbstractController
 
         if ($this->request->isPost()) {
             $view->form->addFilter('strip_tags')
-                ->addFilter('htmlentities', [ENT_QUOTES, 'UTF-8'])
-                ->setFieldValues($this->request->getPost());
+                 ->addFilter('htmlentities', [ENT_QUOTES, 'UTF-8'])
+                 ->setFieldValues($this->request->getPost());
 
             if ($view->form->isValid()) {
                 $view->form->clearFilters()
@@ -52,7 +52,7 @@ class IndexController extends AbstractController
 
                 $post = new Model\Post();
                 $post->save($view->form->getFields());
-                Response::redirect(((BASE_PATH == '') ? '/' : BASE_PATH));
+                Response::redirect('/');
                 exit();
             }
         }
