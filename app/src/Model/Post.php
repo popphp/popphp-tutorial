@@ -12,12 +12,12 @@ class Post
         if (null === $options) {
             $options = ['order' => 'submitted DESC'];
         }
-        return Table\Posts::findAll($options)->rows();
+        return Table\Posts::findAll($options);
     }
 
     public function getById($id)
     {
-        return Table\Posts::findById($id)->getColumnsAsObject();
+        return Table\Posts::findById($id);
     }
 
     public function save(array $fields)

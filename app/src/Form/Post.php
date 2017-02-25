@@ -10,7 +10,8 @@ class Post extends Form
 
     public function __construct(array $fields = null, $action = null, $method = 'post')
     {
-        $fields = [
+        parent::__construct($fields, $action, $method);
+        $fieldConfig = [
             'name' => [
                 'type'       => 'text',
                 'label'      => 'Name (Optional)',
@@ -34,7 +35,7 @@ class Post extends Form
             ]
         ];
 
-        parent::__construct($fields, $action, $method);
+        $this->addFieldsFromConfig($fieldConfig);
     }
 
 }
