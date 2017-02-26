@@ -4,30 +4,29 @@ namespace Tutorial\Controller;
 
 use Pop\Controller\AbstractController;
 use Pop\Console\Console;
-use Pop\Console\Input\Command;
+use Pop\Console\Command;
 use Tutorial\Model;
 
 class ConsoleController extends AbstractController
 {
 
+    /**
+     * @var Console
+     */
     protected $console;
 
     public function __construct()
     {
         $this->console = new Console(80, '    ');
-
-        $helpMessage  = './pop ' . $this->console->colorize('show', Console::BOLD_YELLOW) . "\t\tShow current posts" . PHP_EOL;
-        $helpMessage .= './pop ' . $this->console->colorize('delete', Console::BOLD_YELLOW) . "\tDelete a post" . PHP_EOL;
-        $helpMessage .= './pop ' . $this->console->colorize('help', Console::BOLD_YELLOW) . "\t\tThis help screen";
-
-        $help = new Command('help');
-        $help->setHelp($helpMessage);
-        $this->console->addCommand($help);
     }
 
     public function help()
     {
-        $this->console->write($this->console->getCommand('help')->getHelp());
+        $helpMessage  = './pop ' . $this->console->colorize('show', Console::BOLD_YELLOW) . "\t\tShow current posts" . PHP_EOL;
+        $helpMessage .= './pop ' . $this->console->colorize('delete', Console::BOLD_YELLOW) . "\tDelete a post" . PHP_EOL;
+        $helpMessage .= './pop ' . $this->console->colorize('help', Console::BOLD_YELLOW) . "\t\tThis help screen";
+
+        $this->console->write($helpMessage);
         $this->console->send();
     }
 

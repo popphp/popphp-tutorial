@@ -22,7 +22,7 @@ return [
             'params' => [
                 'adapter' => 'Sqlite',
                 'options' => [
-                    'database' => __DIR__ . '/../data/.htpoptutorial.sqlite'
+                    'database' => __DIR__ . '/../database/.htpoptutorial.sqlite'
                 ]
             ]
         ]

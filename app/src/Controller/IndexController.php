@@ -51,7 +51,7 @@ class IndexController extends AbstractController
                      ->addFilter('html_entity_decode', [ENT_QUOTES, 'UTF-8']);
 
                 $post = new Model\Post();
-                $post->save($view->form->getFields());
+                $post->save($view->form);
                 Response::redirect('/');
                 exit();
             }

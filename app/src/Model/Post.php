@@ -20,11 +20,11 @@ class Post
         return Table\Posts::findById($id);
     }
 
-    public function save(array $fields)
+    public function save($form)
     {
         $post = new Table\Posts([
-            'name'      => (!empty($fields['name']) ? $fields['name'] : null),
-            'comment'   => $fields['comment'],
+            'name'      => (!empty($form['name']) ? $form['name'] : null),
+            'comment'   => $form['comment'],
             'submitted' => date('Y-m-d H:i:s')
         ]);
 
