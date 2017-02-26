@@ -8,6 +8,8 @@ use Pop\Db\Record;
 class Module extends \Pop\Module\Module
 {
 
+    protected $name = 'tutorial';
+
     public function register(Application $application)
     {
         parent::register($application);
