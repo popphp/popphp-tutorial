@@ -4,7 +4,6 @@ namespace Tutorial\Controller;
 
 use Pop\Controller\AbstractController;
 use Pop\Console\Console;
-use Pop\Console\Command;
 use Tutorial\Model;
 
 class ConsoleController extends AbstractController
