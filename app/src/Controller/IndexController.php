@@ -3,6 +3,7 @@
 namespace Tutorial\Controller;
 
 use Pop\Controller\AbstractController;
+use Pop\Form\Filter;
 use Pop\Http\Request;
 use Pop\Http\Response;
 use Pop\View\View;
@@ -42,13 +43,13 @@ class IndexController extends AbstractController
         $view->form  = new Form\Post();
 
         if ($this->request->isPost()) {
-            $view->form->addFilter('strip_tags')
-                 ->addFilter('htmlentities', [ENT_QUOTES, 'UTF-8'])
+            $view->form->addFilter(new Filter\Filter('strip_tags'))
+                 ->addFilter(new Filter\Filter('htmlentities', [ENT_QUOTES, 'UTF-8']))
                  ->setFieldValues($this->request->getPost());
 
             if ($view->form->isValid()) {
                 $view->form->clearFilters()
-                     ->addFilter('html_entity_decode', [ENT_QUOTES, 'UTF-8']);
+                     ->addFilter(new Filter\Filter('html_entity_decode', [ENT_QUOTES, 'UTF-8']));
 
                 $post = new Model\Post();
                 $post->save($view->form);

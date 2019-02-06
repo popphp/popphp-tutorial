@@ -4,6 +4,7 @@ namespace Tutorial\Controller;
 
 use Pop\Controller\AbstractController;
 use Pop\Console\Console;
+use Pop\Console\Command;
 use Tutorial\Model;
 
 class ConsoleController extends AbstractController
@@ -17,16 +18,19 @@ class ConsoleController extends AbstractController
     public function __construct()
     {
         $this->console = new Console(80, '    ');
+        $this->console->setHeader(PHP_EOL . "Pop Tutorial CLI" . PHP_EOL . "----------------" . PHP_EOL);
+        $this->console->setFooter(PHP_EOL);
+
+        $this->console->addCommand(new Command('./pop show', null, 'Show current posts'));
+        $this->console->addCommand(new Command('./pop delete', null, 'Delete a post'));
+        $this->console->addCommand(new Command('./pop help', null, 'Show this help screen'));
+
+        $this->console->setHelpColors(Console::BOLD_YELLOW, Console::BOLD_CYAN);
     }
 
     public function help()
     {
-        $helpMessage  = './pop ' . $this->console->colorize('show', Console::BOLD_YELLOW) . "\t\tShow current posts" . PHP_EOL;
-        $helpMessage .= './pop ' . $this->console->colorize('delete', Console::BOLD_YELLOW) . "\tDelete a post" . PHP_EOL;
-        $helpMessage .= './pop ' . $this->console->colorize('help', Console::BOLD_YELLOW) . "\t\tThis help screen";
-
-        $this->console->write($helpMessage);
-        $this->console->send();
+        $this->console->help();
     }
 
     public function show()
@@ -35,14 +39,14 @@ class ConsoleController extends AbstractController
 
         if (count($posts) > 0) {
             foreach ($posts as $post) {
-                $this->console->write(
+                $this->console->append(
                     $post->id . '. ' .
                     (!empty($post->name) ? $post->name : 'Anonymous') .
                     ' [' . date('M d, Y g:i A', strtotime($post->submitted)) . ']'
                 );
             }
         } else {
-            $this->console->write('There are currently no posts');
+            $this->console->append('There are currently no posts');
         }
 
         $this->console->send();
@@ -50,55 +54,47 @@ class ConsoleController extends AbstractController
 
     public function delete()
     {
-        $postId = $this->getPostId();
 
-        if (null !== $postId) {
-            $post = new Model\Post();
-            $post->remove($postId);
+        $postModel = new Model\Post();
+        $posts     = $postModel->getAll(['order' => 'id ASC']);
 
-            $this->console->write();
-            $this->console->write($this->console->colorize('Post Removed!', Console::BOLD_RED));
-        }
-    }
-
-    public function error()
-    {
-        $this->console->write($this->console->colorize('Sorry, that command was not valid.', Console::BOLD_RED));
-        $this->console->write();
-        $this->console->write('./pop help for help');
-        $this->console->send();
-    }
-
-    /**
-     * Get post id
-     *
-     * @return int
-     */
-    protected function getPostId()
-    {
-        $posts   = (new Model\Post())->getAll(['order' => 'id ASC']);
-        $postIds = [];
+        $this->console->setHeaderSent(true);
+        $this->console->append($this->console->getHeader(true));
 
         if (count($posts) > 0) {
+            $postIds = [];
             foreach ($posts as $post) {
                 $postIds[] = $post->id;
                 $this->console->append($post->id . ":\t" . (!empty($post->name) ? $post->name : 'Anonymous'));
             }
 
             $this->console->append();
-            $this->console->send();
+            $this->console->send(false);
 
             $postId = null;
             while (!is_numeric($postId) || !in_array($postId, $postIds)) {
-                $postId = $this->console->prompt($this->console->getIndent() . 'Select Post ID: ');
+                $postId = $this->console->prompt('Select Post ID: ', null, false, 500, false);
             }
 
-            return $postId;
+            $postModel->remove($postId);
+
+            $this->console->append();
+            $this->console->append($this->console->colorize('Post Removed!', Console::BOLD_RED));
+            $this->console->append($this->console->getFooter(true));
+            $this->console->send(false);
         } else {
-            $this->console->write('There are currently no posts');
-            $this->console->send();
-            return null;
+            $this->console->append('There are currently no posts');
+            $this->console->append($this->console->getFooter(true));
+            $this->console->send(false);
         }
+    }
+
+    public function error()
+    {
+        $this->console->append($this->console->colorize('Sorry, that command was not valid.', Console::BOLD_RED));
+        $this->console->append();
+        $this->console->append('./pop help for help');
+        $this->console->send();
     }
 
 }

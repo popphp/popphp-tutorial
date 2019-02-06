@@ -4,8 +4,7 @@ return [
     'routes'   => [
         'help' => [
             'controller' => 'Tutorial\Controller\ConsoleController',
-            'action'     => 'help',
-            'default'    => true
+            'action'     => 'help'
         ],
         'show' => [
             'controller' => 'Tutorial\Controller\ConsoleController',
@@ -14,6 +13,10 @@ return [
         'delete' => [
             'controller' => 'Tutorial\Controller\ConsoleController',
             'action'     => 'delete'
+        ],
+        '*' => [
+            'controller' => 'Tutorial\Controller\ConsoleController',
+            'action'     => 'error'
         ]
     ],
     'services' => [

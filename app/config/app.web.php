@@ -4,12 +4,15 @@ return [
     'routes'   => [
         '/' => [
             'controller' => 'Tutorial\Controller\IndexController',
-            'action'     => 'index',
-            'default'    => true
+            'action'     => 'index'
         ],
         '/post' => [
             'controller' => 'Tutorial\Controller\IndexController',
             'action'     => 'post'
+        ],
+        '*' => [
+            'controller' => 'Tutorial\Controller\IndexController',
+            'action'     => 'error'
         ]
     ],
     'services' => [
