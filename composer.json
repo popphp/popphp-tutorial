@@ -25,6 +25,7 @@
         "popphp/pop-db": "^4.4.1",
         "popphp/pop-form": "^3.3.0",
         "popphp/pop-http": "^3.2.0",
+        "popphp/pop-kettle": "^1.0.0",
         "popphp/pop-session": "^3.1.4",
         "popphp/pop-view": "^3.1.0"
     },
