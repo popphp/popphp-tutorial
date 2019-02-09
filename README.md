@@ -27,7 +27,7 @@ CLI access point is at `script/pop`
 
 #### Permissions
 
-You must change the permissions of the `app/database` and `script` folders and
+You must change the permissions of the `database` and `script` folders and
 their contents to writable in order for the application to fully work.
 
 BASIC USAGE
@@ -35,11 +35,15 @@ BASIC USAGE
 
 ### Web
 
-While running the built-in PHP web server with `php -S localhost:8000 -t public`,
-try accessing the web application at these routes:
+Start the web server by running:
+
+```bash
+$ ./kettle serve
+```
+
+And then access the web application at these address:
 
     http://localhost:8000/
-    http://localhost:8000/post
 
 You should see the main home page with comment form at the bottom. You can submit
 a comment and see it added to the list of comments on the page.
