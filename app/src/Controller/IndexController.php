@@ -2,6 +2,7 @@
 
 namespace Tutorial\Controller;
 
+use Pop\Application;
 use Pop\Controller\AbstractController;
 use Pop\Form\Filter;
 use Pop\Http\Request;
@@ -13,15 +14,17 @@ use Tutorial\Model;
 class IndexController extends AbstractController
 {
 
+    protected $application;
     protected $request;
     protected $response;
     protected $viewPath;
 
-    public function __construct()
+    public function __construct(Application $application, Request $request, Response $response)
     {
-        $this->request  = new Request();
-        $this->response = new Response();
-        $this->viewPath = __DIR__ . '/../../view';
+        $this->application = $application;
+        $this->request     = $request;
+        $this->response    = $response;
+        $this->viewPath    = __DIR__ . '/../../view';
     }
 
     public function index()

@@ -2,17 +2,20 @@
 
 return [
     'routes'   => [
-        'help' => [
-            'controller' => 'Tutorial\Controller\ConsoleController',
-            'action'     => 'help'
-        ],
         'show' => [
             'controller' => 'Tutorial\Controller\ConsoleController',
-            'action'     => 'show'
+            'action'     => 'show',
+            'help'       => 'Show current posts'
         ],
         'delete' => [
             'controller' => 'Tutorial\Controller\ConsoleController',
-            'action'     => 'delete'
+            'action'     => 'delete',
+            'help'       => 'Delete a post'
+        ],
+        'help' => [
+            'controller' => 'Tutorial\Controller\ConsoleController',
+            'action'     => 'help',
+            'help'       => 'Show this help screen'
         ],
         '*' => [
             'controller' => 'Tutorial\Controller\ConsoleController',

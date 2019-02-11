@@ -2,30 +2,25 @@
 
 namespace Tutorial\Controller;
 
+use Pop\Application;
 use Pop\Controller\AbstractController;
 use Pop\Console\Console;
-use Pop\Console\Command;
 use Tutorial\Model;
 
 class ConsoleController extends AbstractController
 {
 
-    /**
-     * @var Console
-     */
     protected $console;
 
-    public function __construct()
+    public function __construct(Application $application, Console $console)
     {
-        $this->console = new Console(80, '    ');
+        $this->application = $application;
+        $this->console     = $console;
+
         $this->console->setHeader(PHP_EOL . "Pop Tutorial CLI" . PHP_EOL . "----------------" . PHP_EOL);
         $this->console->setFooter(PHP_EOL);
-
-        $this->console->addCommand(new Command('./pop show', null, 'Show current posts'));
-        $this->console->addCommand(new Command('./pop delete', null, 'Delete a post'));
-        $this->console->addCommand(new Command('./pop help', null, 'Show this help screen'));
-
-        $this->console->setHelpColors(Console::BOLD_YELLOW, Console::BOLD_CYAN);
+        $this->console->setHelpColors(Console::BOLD_CYAN, Console::BOLD_GREEN, Console::BOLD_MAGENTA);
+        $this->console->addCommandsFromRoutes($application->router()->getRouteMatch(), './pop');
     }
 
     public function help()
