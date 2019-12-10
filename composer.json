@@ -20,14 +20,14 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "popphp/popphp": "^3.3.1",
-        "popphp/pop-console": "^3.1.0",
-        "popphp/pop-db": "^4.5.5",
-        "popphp/pop-form": "^3.4.0",
-        "popphp/pop-http": "^3.2.2",
-        "popphp/pop-kettle": "^1.0.1",
-        "popphp/pop-session": "^3.1.4",
-        "popphp/pop-view": "^3.1.0"
+        "popphp/popphp": "^3.3.3",
+        "popphp/pop-console": "^3.1.1",
+        "popphp/pop-db": "^5.0.0",
+        "popphp/pop-form": "^3.5.0",
+        "popphp/pop-http": "^3.5.0",
+        "popphp/pop-kettle": "^1.1.0",
+        "popphp/pop-session": "^3.2.0",
+        "popphp/pop-view": "^3.2.0"
     },
     "autoload": {
         "psr-4": {"Tutorial\\": "app/src/"}
