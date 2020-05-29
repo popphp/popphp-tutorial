@@ -5,8 +5,8 @@ namespace Tutorial;
 use Pop\Application;
 use Pop\Console\Console;
 use Pop\Db\Record;
-use Pop\Http\Request;
-use Pop\Http\Response;
+use Pop\Http\Server\Request;
+use Pop\Http\Server\Response;
 
 class Module extends \Pop\Module\Module
 {

@@ -20,12 +20,12 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "popphp/popphp": "^3.3.3",
+        "popphp/popphp": "^3.4.1",
         "popphp/pop-console": "^3.1.1",
-        "popphp/pop-db": "^5.0.0",
-        "popphp/pop-form": "^3.5.0",
-        "popphp/pop-http": "^3.5.0",
-        "popphp/pop-kettle": "^1.1.0",
+        "popphp/pop-db": "^5.0.5",
+        "popphp/pop-form": "^3.5.1",
+        "popphp/pop-http": "^4.0.3",
+        "popphp/pop-kettle": "^1.3.0",
         "popphp/pop-session": "^3.2.0",
         "popphp/pop-view": "^3.2.0"
     },
