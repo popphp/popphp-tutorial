@@ -27,8 +27,8 @@ CLI access point is at `script/pop`
 
 #### Permissions
 
-You must change the permissions of the `database` and `script` folders and
-their contents to writable in order for the application to fully work.
+You must change the permissions of the `database` folder and `script/pop` file
+to writable in order for the application to fully work.
 
 BASIC USAGE
 -----------
