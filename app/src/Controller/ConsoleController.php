@@ -10,7 +10,7 @@ use Tutorial\Model;
 class ConsoleController extends AbstractController
 {
 
-    protected $console;
+    protected Console $console;
 
     public function __construct(Application $application, Console $console)
     {
@@ -23,12 +23,12 @@ class ConsoleController extends AbstractController
         $this->console->addCommandsFromRoutes($application->router()->getRouteMatch(), './pop');
     }
 
-    public function help()
+    public function help(): void
     {
         $this->console->help();
     }
 
-    public function show()
+    public function show(): void
     {
         $posts = (new Model\Post())->getAll(['order' => 'id ASC']);
 
@@ -47,7 +47,7 @@ class ConsoleController extends AbstractController
         $this->console->send();
     }
 
-    public function delete()
+    public function delete(): void
     {
 
         $postModel = new Model\Post();
@@ -84,7 +84,7 @@ class ConsoleController extends AbstractController
         }
     }
 
-    public function error()
+    public function error(): void
     {
         $this->console->append($this->console->colorize('Sorry, that command was not valid.', Console::BOLD_RED));
         $this->console->append();

@@ -3,11 +3,13 @@
 namespace Tutorial\Model;
 
 use Tutorial\Table;
+use Pop\Db\Record;
+use Pop\Db\Record\Collection;
 
 class Post
 {
 
-    public function getAll(array $options = null)
+    public function getAll(array $options = null): Collection|array
     {
         if (null === $options) {
             $options = ['order' => 'submitted DESC'];
@@ -15,12 +17,12 @@ class Post
         return Table\Posts::findAll($options);
     }
 
-    public function getById($id)
+    public function getById($id): Record|array
     {
         return Table\Posts::findById($id);
     }
 
-    public function save($form)
+    public function save($form):void
     {
         $post = new Table\Posts([
             'name'      => (!empty($form['name']) ? $form['name'] : null),
@@ -31,7 +33,7 @@ class Post
         $post->save();
     }
 
-    public function remove($id)
+    public function remove($id): void
     {
         $post = Table\Posts::findById($id);
         if (isset($post->id)) {

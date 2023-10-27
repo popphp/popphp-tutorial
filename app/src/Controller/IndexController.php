@@ -14,10 +14,10 @@ use Tutorial\Model;
 class IndexController extends AbstractController
 {
 
-    protected $application;
-    protected $request;
-    protected $response;
-    protected $viewPath;
+    protected Application $application;
+    protected Request $request;
+    protected Response $response;
+    protected string $viewPath;
 
     public function __construct(Application $application, Request $request, Response $response)
     {
@@ -27,7 +27,7 @@ class IndexController extends AbstractController
         $this->viewPath    = __DIR__ . '/../../view';
     }
 
-    public function index()
+    public function index(): void
     {
         $post = new Model\Post();
 
@@ -39,7 +39,7 @@ class IndexController extends AbstractController
         $this->response->send();
     }
 
-    public function post()
+    public function post(): void
     {
         $view = new View($this->viewPath . '/post.phtml');
         $view->title = 'Post Comment';
@@ -65,7 +65,7 @@ class IndexController extends AbstractController
         $this->response->send();
     }
 
-    public function error()
+    public function error(): void
     {
         $view = new View($this->viewPath . '/error.phtml');
         $view->title = 'Error - Page Not Found';

@@ -11,9 +11,9 @@ use Pop\Http\Server\Response;
 class Module extends \Pop\Module\Module
 {
 
-    protected $name = 'tutorial';
+    protected ?string $name = 'tutorial';
 
-    public function register(Application $application)
+    public function register(Application $application): static
     {
         parent::register($application);
 
@@ -39,6 +39,8 @@ class Module extends \Pop\Module\Module
         $this->application->on('app.init', function($application){
             Record::setDb($application->services['database']);
         });
+
+        return $this;
     }
 
 }

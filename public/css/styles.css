@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Source Sans Pro", arial, helvetica, verdana, sans-serif;
-    font-size: 0.825em;
+    font-size: 0.9em;
     color: #727170;
 }
 
@@ -85,21 +85,23 @@ fieldset {
 }
 
 input[type=text] {
-    margin: 0;
+    margin: 10px;
     padding: 8px 6px 8px 6px;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.0em;
     border: solid 1px #999;
-    background-color: #ddd;
+    background-color: #eee;
+    border-radius: 3px;
 }
 
 textarea {
-    margin: 0 0 10px 0;
+    margin: 10px;
     padding: 3px;
-    background-color: #ddd;
+    background-color: #eee;
     border: solid 1px #999;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.0em;
+    border-radius: 3px;
 }
 
 input[type=text]:focus, textarea:focus {
@@ -108,7 +110,7 @@ input[type=text]:focus, textarea:focus {
 }
 
 input[type=submit] {
-    margin: 0;
+    margin: 10px;
     padding: 8px 12px 8px 12px;
     display: block;
     text-transform: uppercase;
@@ -119,6 +121,7 @@ input[type=submit] {
     background-color: #4aa1ce;
     border: none;
     font-family: "Source Sans Pro", Arial, sans-serif;
+    border-radius: 3px;
 }
 
 input[type=submit]:hover {
@@ -131,9 +134,9 @@ input[type=submit]:focus, button:focus {
 }
 
 header {
-    margin: 2% auto 2% auto;
+    margin: 5% auto 5% auto;
     padding: 0;
-    width: 96%;
+    width: 90%;
     height: 320px;
     background-color: #e27f46;
     background-image: url(https://www.popphp.org/assets/img/pop-php-logo-shadow.png);
@@ -161,8 +164,8 @@ header > h1 > a {
 
 footer {
     margin: 2% auto 2% auto;
-    padding: 1% 2% 1% 2%;
-    width: 92%;
+    padding: 1% 0 1% 0;
+    width: 90%;
     height: 40px;
     font-size: 0.825em;
     border-top: solid 1px #ccc;
@@ -173,8 +176,8 @@ footer {
 
 #content {
     margin: 0 auto;
-    padding: 1% 2% 1% 2%;
-    width: 92%;
+    padding: 1% 5% 1% 5%;
+    width: 90%;
     min-height: 240px;
 }
 
