@@ -1,13 +1,23 @@
 Pop PHP Tutorial Application
 ============================
 
-OVERVIEW
+* [Overview](#overview)
+* [Install](#install)
+* [Basic Usage](#basic-usage)
+* [Notes](#notes)
+
+[![Join the chat at https://popphp.slack.com](https://media.popphp.org/img/slack.svg)](https://popphp.slack.com)
+[![Join the chat at https://discord.gg/D9JBxPa5](https://media.popphp.org/img/discord.svg)](https://discord.gg/D9JBxPa5)
+
+Overview
 --------
 
 This is a basic tutorial application for the Pop PHP Framework to demonstrate how to
 wire up some simple routes for a web-facing application and a CLI-based application.
 
-INSTALL
+[Top](#pop-php-tutorial-application)
+
+Install
 -------
 
 Create a new project with it:
@@ -30,7 +40,9 @@ CLI access point is at `script/pop`
 You must change the permissions of the `database` folder and `script/pop` file
 to writable in order for the application to fully work.
 
-BASIC USAGE
+[Top](#pop-php-tutorial-application)
+
+Basic Usage
 -----------
 
 ### Web
@@ -62,7 +74,9 @@ $ ./script/pop delete
 The first command shows the help screen; the second command shows any comments that have
 been posted; the third command allows you to select a post to delete.
 
-NOTES
+[Top](#pop-php-tutorial-application)
+
+Notes
 -----
 
 * The tutorial application uses the `pop-db` component to store the comments in a small SQLite database.
@@ -72,3 +86,5 @@ NOTES
 response objects within the controller object.
 * The CLI application is utilizing the `pop-console` component to leverage it for parsing
 the CLI requests and returning the appropriate responses to the CLI.
+
+[Top](#pop-php-tutorial-application)
