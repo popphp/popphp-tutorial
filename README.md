@@ -1,13 +1,13 @@
 Pop PHP Tutorial Application
 ============================
 
+[![Join the chat at https://popphp.slack.com](https://media.popphp.org/img/slack.svg)](https://popphp.slack.com)
+[![Join the chat at https://discord.gg/D9JBxPa5](https://media.popphp.org/img/discord.svg)](https://discord.gg/D9JBxPa5)
+
 * [Overview](#overview)
 * [Install](#install)
 * [Basic Usage](#basic-usage)
 * [Notes](#notes)
-
-[![Join the chat at https://popphp.slack.com](https://media.popphp.org/img/slack.svg)](https://popphp.slack.com)
-[![Join the chat at https://discord.gg/D9JBxPa5](https://media.popphp.org/img/discord.svg)](https://discord.gg/D9JBxPa5)
 
 Overview
 --------
