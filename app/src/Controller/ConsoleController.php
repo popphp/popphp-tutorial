@@ -5,6 +5,7 @@ namespace Tutorial\Controller;
 use Pop\Application;
 use Pop\Controller\AbstractController;
 use Pop\Console\Console;
+use Pop\Console\Color;
 use Tutorial\Model;
 
 class ConsoleController extends AbstractController
@@ -19,7 +20,7 @@ class ConsoleController extends AbstractController
 
         $this->console->setHeader(PHP_EOL . "Pop Tutorial CLI" . PHP_EOL . "----------------" . PHP_EOL);
         $this->console->setFooter(PHP_EOL);
-        $this->console->setHelpColors(Console::BOLD_CYAN, Console::BOLD_GREEN, Console::BOLD_MAGENTA);
+        $this->console->setHelpColors(Color::BOLD_CYAN, Color::BOLD_GREEN, Color::BOLD_MAGENTA);
         $this->console->addCommandsFromRoutes($application->router()->getRouteMatch(), './pop');
     }
 
@@ -74,7 +75,7 @@ class ConsoleController extends AbstractController
             $postModel->remove($postId);
 
             $this->console->append();
-            $this->console->append($this->console->colorize('Post Removed!', Console::BOLD_RED));
+            $this->console->append($this->console->colorize('Post Removed!', Color::BOLD_RED));
             $this->console->append($this->console->getFooter(true));
             $this->console->send(false);
         } else {
@@ -86,7 +87,7 @@ class ConsoleController extends AbstractController
 
     public function error(): void
     {
-        $this->console->append($this->console->colorize('Sorry, that command was not valid.', Console::BOLD_RED));
+        $this->console->append($this->console->colorize('Sorry, that command was not valid.', Color::BOLD_RED));
         $this->console->append();
         $this->console->append('./pop help for help');
         $this->console->send();
