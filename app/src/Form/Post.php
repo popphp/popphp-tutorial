@@ -3,7 +3,7 @@
 namespace Tutorial\Form;
 
 use Pop\Form\Form;
-use Pop\Validator\LengthLte;
+use Pop\Validator\LengthLessThanEqual;
 
 class Post extends Form
 {
@@ -28,7 +28,7 @@ class Post extends Form
                     'rows'   => 5,
                     'cols'   => 65
                 ],
-                'validators' => new LengthLte(160, 'The comment must be 160 characters or less.')
+                'validators' => new LengthLessThanEqual(160, 'The comment must be 160 characters or less.')
             ],
             'submit' => [
                 'type'  => 'submit',

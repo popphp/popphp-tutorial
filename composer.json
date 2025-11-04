@@ -19,15 +19,15 @@
         }
     ],
     "require": {
-        "php": ">=8.2.0",
-        "popphp/popphp": "^4.3.8",
-        "popphp/pop-console": "^4.2.4",
-        "popphp/pop-db": "^6.6.5",
-        "popphp/pop-form": "^4.2.2",
-        "popphp/pop-http": "^5.3.2",
-        "popphp/pop-kettle": "^2.3.3",
-        "popphp/pop-session": "^4.0.2",
-        "popphp/pop-view": "^4.0.3"
+        "php": ">=8.3.0",
+        "popphp/popphp": "^4.4.0",
+        "popphp/pop-console": "^4.2.6",
+        "popphp/pop-db": "^6.7.0",
+        "popphp/pop-form": "^4.2.6",
+        "popphp/pop-http": "^5.3.8",
+        "popphp/pop-kettle": "^2.3.4",
+        "popphp/pop-session": "^4.0.4",
+        "popphp/pop-view": "^4.0.4"
     },
     "autoload": {
         "psr-4": {"Tutorial\\": "app/src/"}
